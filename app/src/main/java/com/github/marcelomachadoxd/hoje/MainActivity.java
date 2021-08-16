@@ -7,12 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
 public class MainActivity extends AppCompatActivity {
 
     EditText n1, n2, n3;
     TextView mediaResultado;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +20,7 @@ public class MainActivity extends AppCompatActivity {
         n1 = (EditText) findViewById(R.id.num1);
         n2 = (EditText) findViewById(R.id.num2);
         n3 = (EditText) findViewById(R.id.num3);
-
-
         mediaResultado = (TextView) findViewById(R.id.media);
-
     }
 
     public void calcular(View view) {
@@ -34,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Double a3 = Double.parseDouble(String.valueOf(n3.getText()));
 
         Double maior;
+        Double media;
 
         if (a3 > a2) {
             maior = a3;
@@ -41,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
             maior = a2;
         }
 
-        
+        if (a1 == 0 || maior < 5.0) {
+            maior /= 2.0d;
+        }
 
-        Double media = (a1 + maior) / 2;
+         media = (a1 * 0.4d + maior * 0.6d);
 
         mediaResultado.setText(media.toString());
-
 
     }
 }
