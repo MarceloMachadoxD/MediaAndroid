@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
             maior = a2;
         }
 
-        if (a1 == 0 || maior < 5.0) {
-            maior /= 2.0d;
-        }
-
          media = (a1 * 0.4d + maior * 0.6d);
+
+        if (a1 == 0 || maior < 5.0) {
+            media /= 2.0d;
+        }
 
         mediaResultado.setText(media.toString());
 
