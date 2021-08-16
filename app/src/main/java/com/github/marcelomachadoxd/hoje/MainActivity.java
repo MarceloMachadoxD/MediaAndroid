@@ -33,10 +33,19 @@ public class MainActivity extends AppCompatActivity {
         Double a2 = Double.parseDouble(String.valueOf(n2.getText()));
         Double a3 = Double.parseDouble(String.valueOf(n3.getText()));
 
-        Double media = (a1 + a2 + a3) / 3;
+        Double maior;
+
+        if (a3 > a2) {
+            maior = a3;
+        } else {
+            maior = a2;
+        }
+
+        
+
+        Double media = (a1 + maior) / 2;
 
         mediaResultado.setText(media.toString());
-
 
 
     }
